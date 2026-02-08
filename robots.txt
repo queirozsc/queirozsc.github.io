@@ -1,0 +1,17 @@
+# robots.txt para queirozsc.github.io
+# Gerado em: 2025-02-08
+
+# Permitir todos os bots
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://queirozsc.github.io/sitemap.xml
+
+# Crawl-delay (opcional - alguns bots respeitam)
+Crawl-delay: 1
+
+# Bloquear diretórios específicos (se necessário)
+# Descomente se tiver assets que não devem ser indexados
+# Disallow: /assets/temp/
+# Disallow: /private/

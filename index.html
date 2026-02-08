@@ -1,628 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sergio Carvalho Queiroz - Líder em Dados, Análise e Inovação Tecnológica">
-    <meta name="keywords" content="Data Analytics, Digital Transformation, Business Intelligence, Microsoft Fabric, Power BI">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Sergio Carvalho Queiroz - Líder sênior em Dados, Análise e Inovação Tecnológica. Especialista em transformação digital, governança de dados, BI corporativo, Microsoft Fabric, Power BI e DataOps no setor de saúde.">
+    <meta name="keywords"
+        content="Sergio Carvalho Queiroz, Data Analytics, Digital Transformation, Business Intelligence, Microsoft Fabric, Power BI, DataOps, Data Governance, Healthcare IT, Transformação Digital Saúde, BI Corporativo, Lead Data Officer, Ciência de Dados, Machine Learning, Inteligência Artificial, Santa Cruz Bolivia">
     <meta name="author" content="Sergio Carvalho Queiroz">
-    <title>Sergio Carvalho Queiroz | Data & Digital Transformation Leader</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #0066cc;
-            --secondary-color: #00a3e0;
-            --dark-bg: #1a1a2e;
-            --light-bg: #f5f7fa;
-            --text-dark: #2c3e50;
-            --text-light: #6c757d;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* Language Selector */
-        .language-selector {
-            position: fixed;
-            top: 80px;
-            right: 2rem;
-            z-index: 1001;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            padding: 0.5rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .lang-btn {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--primary-color);
-            background: white;
-            color: var(--primary-color);
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .lang-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .lang-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            overflow: hidden;
-        }
-
-        .hero-banner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-            filter: brightness(0.7);
-        }
-
-        .hero-content {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            z-index: 1;
-        }
-
-        .hero-text {
-            color: white;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-text .highlight {
-            color: var(--secondary-color);
-            font-weight: 700;
-        }
-
-        .hero-text h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-            color: #a8b2d1;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            color: #8892b0;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,163,224,0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: var(--dark-bg);
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-container {
-            position: relative;
-            width: 400px;
-            height: 400px;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--secondary-color);
-            box-shadow: 0 20px 60px rgba(0,163,224,0.4);
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 2rem;
-            background: white;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-color);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .about-card {
-            padding: 2rem;
-            background: var(--light-bg);
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .about-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .about-card ul {
-            list-style: none;
-        }
-
-        .about-card li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .about-card li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        /* Experience Section */
-        .experience {
-            padding: 6rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .timeline {
-            position: relative;
-            margin-top: 3rem;
-        }
-
-        .timeline-item {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--secondary-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-title h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title h4 {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-
-        .timeline-date {
-            color: var(--text-light);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .timeline-description {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .achievements {
-            margin-top: 1rem;
-        }
-
-        .achievements h5 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        .achievements ul {
-            list-style: none;
-        }
-
-        .achievements li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--text-dark);
-        }
-
-        .achievements li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        /* Certifications */
-        .certifications {
-            padding: 6rem 2rem;
-            background: white;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .cert-card {
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .cert-card:hover {
-            border-color: var(--secondary-color);
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .cert-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .cert-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .cert-card p {
-            color: var(--text-light);
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 6rem 2rem;
-            background: var(--dark-bg);
-            color: white;
-        }
-
-        .skills .section-title {
-            color: white;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-category {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .skill-category h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .skill-list li::before {
-            content: '●';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 2rem;
-            background: var(--light-bg);
-        }
-
-        .contact-content {
-            max-width: 800px;
-            margin: 3rem auto;
-            text-align: center;
-        }
-
-        .contact-content p {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-card .icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-card a {
-            color: var(--primary-color);
-            text-decoration: none;
-            word-break: break-word;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-bg);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .profile-container {
-                width: 300px;
-                height: 300px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .timeline-header {
-                flex-direction: column;
-            }
-
-            .language-selector {
-                top: 70px;
-                right: 1rem;
-            }
-
-            .lang-btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese, English, Spanish">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Sergio Carvalho Queiroz | Data & Digital Transformation Leader">
+    <meta property="og:description"
+        content="Líder sênior em Dados e Transformação Digital com experiência comprovada em governança de dados, BI corporativo e Microsoft Fabric.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seu-usuario.github.io">
+    <meta property="og:image" content="https://seu-usuario.github.io/Gemini_Generated_Image_3n09fq3n09fq3n09.png">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sergio Carvalho Queiroz | Data Leader">
+    <meta name="twitter:description" content="Especialista em Dados e Transformação Digital">
+    <meta name="twitter:image" content="https://seu-usuario.github.io/Gemini_Generated_Image_3n09fq3n09fq3n09.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://seu-usuario.github.io">
+
+    <title>Sergio Carvalho Queiroz | Líder em Dados e Transformação Digital | Data Analytics Expert</title>
+
+    <!-- Structured Data (JSON-LD) para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sergio Carvalho Queiroz",
+      "jobTitle": "Gerente de Transformação Digital",
+      "description": "Líder sênior em Dados, Análise e Inovação Tecnológica",
+      "url": "https://seu-usuario.github.io",
+      "sameAs": [
+        "https://www.linkedin.com/in/queirozsc/"
+      ],
+      "email": "queirozsc@gmail.com",
+      "telephone": "+59176324985",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santa Cruz de la Sierra",
+        "addressCountry": "BO"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Fundação Getulio Vargas"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universidade Federal do Maranhão"
+        }
+      ],
+      "knowsAbout": [
+        "Data Analytics",
+        "Digital Transformation",
+        "Business Intelligence",
+        "Microsoft Fabric",
+        "Power BI",
+        "DataOps",
+        "Data Governance"
+      ]
+    }
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDRM6DX40E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PDRM6DX40E'); // Substitua pelo seu ID
+    </script>
 </head>
+
 <body>
     <!-- Language Selector -->
     <div class="language-selector">
@@ -633,14 +94,18 @@
 
     <!-- Navigation -->
     <header>
-        <nav>
+        <nav aria-label="Menu principal">
             <a href="#home" class="logo">SCQ</a>
             <ul class="nav-links">
-                <li><a href="#home" id="nav-home">Início</a></li>
-                <li><a href="#about" id="nav-about">Sobre</a></li>
-                <li><a href="#experience" id="nav-experience">Experiência</a></li>
-                <li><a href="#certifications" id="nav-certifications">Certificações</a></li>
-                <li><a href="#skills" id="nav-skills">Competências</a></li>
+                <li><a href="#home" id="nav-home" aria-label="Ir para seção inicial">Início</a></li>
+                <li><a href="#about" id="nav-about" aria-label="Ir para seção sobre">Sobre</a></li>
+                <li><a href="#experience" id="nav-experience" aria-label="Ir para seção experiência">Experiência</a>
+                </li>
+                <li><a href="#certifications" id="nav-certifications"
+                        aria-label="Ir para seção certificações">Certificações</a></li>
+                <li><a href="#skills" id="nav-skills" aria-label="Ir para seção competências">Competências</a></li>
+                <li><a href="https://seu-usuario.github.io/blog" id="nav-articles" target="_blank"
+                        aria-label="Abrir seção artigos em nova aba">Artigos</a></li>
                 <li><a href="#contact" id="nav-contact">Contato</a></li>
             </ul>
             <button class="mobile-menu-btn">☰</button>
@@ -649,20 +114,27 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <img src="crie_uma_imagem_para_ser_usada_como_banner_de_meu___1___1_.png" alt="Banner" class="hero-banner">
+        <img src="crie_uma_imagem_para_ser_usada_como_banner_de_meu___1___1_.png"
+            alt="Banner Microsoft Fabric Analytics Engineer e Power BI Data Analyst certifications" class="hero-banner"
+            loading="lazy">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Sergio Carvalho <span class="highlight">Queiroz</span></h1>
                 <h2 id="hero-subtitle">Líder em Dados, Análise e Inovação Tecnológica</h2>
-                <p id="hero-description">Especialista em transformação digital no setor de saúde com experiência comprovada em governança de dados, BI corporativo, Microsoft Fabric e DataOps. Combinando visão estratégica e excelência técnica para impulsionar decisões executivas.</p>
+                <p id="hero-description">Especialista em transformação digital no setor de saúde com experiência
+                    comprovada em governança de dados, BI corporativo, Microsoft Fabric e DataOps. Combinando visão
+                    estratégica e excelência técnica para impulsionar decisões executivas.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary" id="cta-contact">Entre em Contato</a>
-                    <a href="https://www.linkedin.com/in/queirozsc/" target="_blank" class="btn btn-outline">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/queirozsc/" target="_blank"
+                        class="btn btn-outline">LinkedIn</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="profile-container">
-                    <img src="Gemini_Generated_Image_3n09fq3n09fq3n09.png" alt="Sergio Carvalho Queiroz" class="profile-image">
+                    <img src="Gemini_Generated_Image_3n09fq3n09fq3n09.png"
+                        alt="Sergio Carvalho Queiroz - Gerente de Transformação Digital especialista em Data Analytics"
+                        class="profile-image" loading="lazy">
                 </div>
             </div>
         </div>
@@ -721,12 +193,15 @@
                         </div>
                         <div class="timeline-date" id="job1-date">Out 2024 - Atual</div>
                     </div>
-                    <p class="timeline-description" id="job1-desc">Multinacional de consultoria com presença em +25 países, especializada em transformação organizacional com ROI médio de 5:1</p>
+                    <p class="timeline-description" id="job1-desc">Multinacional de consultoria com presença em +25
+                        países, especializada em transformação organizacional com ROI médio de 5:1</p>
                     <div class="achievements">
                         <h5 id="ach-title1">Principais Realizações:</h5>
                         <ul>
-                            <li id="job1-ach1">Aumento de 3,7% no tráfego em horários de pico através de decisões baseadas em indicadores Power BI</li>
-                            <li id="job1-ach2">Implementação do Microsoft Fabric para escalar milhões de registros com Governança de Dados (16 procedimentos ativos)</li>
+                            <li id="job1-ach1">Aumento de 3,7% no tráfego em horários de pico através de decisões
+                                baseadas em indicadores Power BI</li>
+                            <li id="job1-ach2">Implementação do Microsoft Fabric para escalar milhões de registros com
+                                Governança de Dados (16 procedimentos ativos)</li>
                             <li id="job1-ach3">Lançamento da Semana da Cultura de Dados e programa Data Champions</li>
                             <li id="job1-ach4">Definição do Roteiro de Dados e IA 2026-2028</li>
                         </ul>
@@ -742,13 +217,17 @@
                         </div>
                         <div class="timeline-date" id="job2-date">Jul 2020 - Out 2024</div>
                     </div>
-                    <p class="timeline-description" id="job2-desc">Hospital privado de alta complexidade, referência em inovação e qualidade na Bolívia</p>
+                    <p class="timeline-description" id="job2-desc">Hospital privado de alta complexidade, referência em
+                        inovação e qualidade na Bolívia</p>
                     <div class="achievements">
                         <h5 id="ach-title2">Principais Realizações:</h5>
                         <ul>
-                            <li id="job2-ach1">Gerenciei governança de dados corporativos garantindo qualidade, segurança e padronização</li>
-                            <li id="job2-ach2">Coordenei soluções de BI integrando sistemas hospitalares e administrativos</li>
-                            <li id="job2-ach3">Promovi curadoria de dados e gestão do conhecimento com BI self-service</li>
+                            <li id="job2-ach1">Gerenciei governança de dados corporativos garantindo qualidade,
+                                segurança e padronização</li>
+                            <li id="job2-ach2">Coordenei soluções de BI integrando sistemas hospitalares e
+                                administrativos</li>
+                            <li id="job2-ach3">Promovi curadoria de dados e gestão do conhecimento com BI self-service
+                            </li>
                             <li id="job2-ach4">Alinhamento estratégico entre negócios, TI e fornecedores</li>
                         </ul>
                     </div>
@@ -763,11 +242,13 @@
                         </div>
                         <div class="timeline-date" id="job3-date">Jul 2018 - Mar 2020</div>
                     </div>
-                    <p class="timeline-description" id="job3-desc">Rede integrada de saúde oftalmológica dedicada à excelência médica e inovação tecnológica</p>
+                    <p class="timeline-description" id="job3-desc">Rede integrada de saúde oftalmológica dedicada à
+                        excelência médica e inovação tecnológica</p>
                     <div class="achievements">
                         <h5 id="ach-title3">Principais Realizações:</h5>
                         <ul>
-                            <li id="job3-ach1">Coordenei implementação de BI corporativo integrando múltiplos sistemas e unidades</li>
+                            <li id="job3-ach1">Coordenei implementação de BI corporativo integrando múltiplos sistemas e
+                                unidades</li>
                             <li id="job3-ach2">Implementei solução RPA no centro de serviços compartilhados</li>
                             <li id="job3-ach3">Consolidação do Philips Tasy em diversas unidades da rede</li>
                             <li id="job3-ach4">Gestão de infraestrutura em 25 hospitais</li>
@@ -784,12 +265,15 @@
                         </div>
                         <div class="timeline-date" id="job4-date">Ago 2014 - Mar 2017</div>
                     </div>
-                    <p class="timeline-description" id="job4-desc">Melhor operadora de saúde de Santa Catarina (IDSS 2014), 24x vencedora Top of Mind Estadual</p>
+                    <p class="timeline-description" id="job4-desc">Melhor operadora de saúde de Santa Catarina (IDSS
+                        2014), 24x vencedora Top of Mind Estadual</p>
                     <div class="achievements">
                         <h5 id="ach-title4">Principais Realizações:</h5>
                         <ul>
-                            <li id="job4-ach1">Liderei conclusão da implementação do Philips Tasy com +5.400 horas de projeto</li>
-                            <li id="job4-ach2">Estruturei o Escritório de Projetos de TI (S-PMO) com governança e GMUD</li>
+                            <li id="job4-ach1">Liderei conclusão da implementação do Philips Tasy com +5.400 horas de
+                                projeto</li>
+                            <li id="job4-ach2">Estruturei o Escritório de Projetos de TI (S-PMO) com governança e GMUD
+                            </li>
                             <li id="job4-ach3">Implementei modelo de maturidade digital HIMSS EMRAM</li>
                             <li id="job4-ach4">Articulação executiva com negócios, fornecedores e liderança</li>
                         </ul>
@@ -805,12 +289,15 @@
                         </div>
                         <div class="timeline-date" id="job5-date">Mar 2012 - Ago 2014</div>
                     </div>
-                    <p class="timeline-description" id="job5-desc">Centro de referência em saúde integrado à Rede D'Or São Luiz, maior rede hospitalar privada do Brasil</p>
+                    <p class="timeline-description" id="job5-desc">Centro de referência em saúde integrado à Rede D'Or
+                        São Luiz, maior rede hospitalar privada do Brasil</p>
                     <div class="achievements">
                         <h5 id="ach-title5">Principais Realizações:</h5>
                         <ul>
-                            <li id="job5-ach1">Gerenciei implementação e integração de sistemas hospitalares (Tasy, radiologia, laboratório)</li>
-                            <li id="job5-ach2">Elaborei planos de continuidade de negócios e recuperação de desastres</li>
+                            <li id="job5-ach1">Gerenciei implementação e integração de sistemas hospitalares (Tasy,
+                                radiologia, laboratório)</li>
+                            <li id="job5-ach2">Elaborei planos de continuidade de negócios e recuperação de desastres
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -907,7 +394,8 @@
         <div class="section-container">
             <h2 class="section-title" id="contact-title">Entre em Contato</h2>
             <div class="contact-content">
-                <p id="contact-intro">Estou sempre aberto a discutir novos projetos, oportunidades de consultoria ou parcerias estratégicas em transformação digital e analytics.</p>
+                <p id="contact-intro">Estou sempre aberto a discutir novos projetos, oportunidades de consultoria ou
+                    parcerias estratégicas em transformação digital e analytics.</p>
             </div>
             <div class="contact-info">
                 <div class="contact-card">
@@ -917,8 +405,8 @@
                 </div>
                 <div class="contact-card">
                     <div class="icon">📱</div>
-                    <h3 id="phone-title">Telefone</h3>
-                    <a href="tel:+59176324985">+591 76324985</a>
+                    <h3 id="phone-title">WhatsApp</h3>
+                    <a href="https://wa.me/59176324985" target="_blank">+591 76324985</a>
                 </div>
                 <div class="contact-card">
                     <div class="icon">📍</div>
@@ -938,6 +426,7 @@
     <footer>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/queirozsc/" target="_blank">LinkedIn</a>
+            <a href="https://wa.me/59176324985" target="_blank">WhatsApp</a>
             <a href="mailto:queirozsc@gmail.com">Email</a>
         </div>
         <p>&copy; 2025 Sergio Carvalho Queiroz. <span id="footer-text">Todos os direitos reservados.</span></p>
@@ -947,6 +436,8 @@
         // Translations object
         const translations = {
             pt: {
+                'nav-articles': 'Artigos',
+                'phone-title': 'WhatsApp',
                 // Navigation
                 'nav-home': 'Início',
                 'nav-about': 'Sobre',
@@ -954,12 +445,12 @@
                 'nav-certifications': 'Certificações',
                 'nav-skills': 'Competências',
                 'nav-contact': 'Contato',
-                
+
                 // Hero
                 'hero-subtitle': 'Líder em Dados, Análise e Inovação Tecnológica',
                 'hero-description': 'Especialista em transformação digital no setor de saúde com experiência comprovada em governança de dados, BI corporativo, Microsoft Fabric e DataOps. Combinando visão estratégica e excelência técnica para impulsionar decisões executivas.',
                 'cta-contact': 'Entre em Contato',
-                
+
                 // About
                 'about-title': 'Perfil Profissional',
                 'specialties-title': '🎯 Especialidades',
@@ -980,7 +471,7 @@
                 'lang3': 'Inglês - Intermediário B1',
                 'lang4': 'Disponível para viagens internacionais',
                 'lang5': 'Disponível para expatriação',
-                
+
                 // Experience
                 'experience-title': 'Experiência Profissional',
                 'job1-title': 'Gerente de Transformação Digital',
@@ -991,7 +482,7 @@
                 'job1-ach2': 'Implementação do Microsoft Fabric para escalar milhões de registros com Governança de Dados (16 procedimentos ativos)',
                 'job1-ach3': 'Lançamento da Semana da Cultura de Dados e programa Data Champions',
                 'job1-ach4': 'Definição do Roteiro de Dados e IA 2026-2028',
-                
+
                 'job2-title': 'Coordenador de Inovação, Integrações e Dados',
                 'job2-date': 'Jul 2020 - Out 2024',
                 'job2-desc': 'Hospital privado de alta complexidade, referência em inovação e qualidade na Bolívia',
@@ -1000,7 +491,7 @@
                 'job2-ach2': 'Coordenei soluções de BI integrando sistemas hospitalares e administrativos',
                 'job2-ach3': 'Promovi curadoria de dados e gestão do conhecimento com BI self-service',
                 'job2-ach4': 'Alinhamento estratégico entre negócios, TI e fornecedores',
-                
+
                 'job3-title': 'Coordenador de TI',
                 'job3-date': 'Jul 2018 - Mar 2020',
                 'job3-desc': 'Rede integrada de saúde oftalmológica dedicada à excelência médica e inovação tecnológica',
@@ -1009,7 +500,7 @@
                 'job3-ach2': 'Implementei solução RPA no centro de serviços compartilhados',
                 'job3-ach3': 'Consolidação do Philips Tasy em diversas unidades da rede',
                 'job3-ach4': 'Gestão de infraestrutura em 25 hospitais',
-                
+
                 'job4-title': 'Gerente de Inovação e Tecnologia',
                 'job4-date': 'Ago 2014 - Mar 2017',
                 'job4-desc': 'Melhor operadora de saúde de Santa Catarina (IDSS 2014), 24x vencedora Top of Mind Estadual',
@@ -1018,19 +509,19 @@
                 'job4-ach2': 'Estruturei o Escritório de Projetos de TI (S-PMO) com governança e GMUD',
                 'job4-ach3': 'Implementei modelo de maturidade digital HIMSS EMRAM',
                 'job4-ach4': 'Articulação executiva com negócios, fornecedores e liderança',
-                
+
                 'job5-title': 'Gerente de TI',
                 'job5-date': 'Mar 2012 - Ago 2014',
                 'job5-desc': 'Centro de referência em saúde integrado à Rede D\'Or São Luiz, maior rede hospitalar privada do Brasil',
                 'ach-title5': 'Principais Realizações:',
                 'job5-ach1': 'Gerenciei implementação e integração de sistemas hospitalares (Tasy, radiologia, laboratório)',
                 'job5-ach2': 'Elaborei planos de continuidade de negócios e recuperação de desastres',
-                
+
                 // Certifications
                 'cert-title': 'Certificações',
                 'cert4-name': 'Especialista em Lead Data Officer',
                 'cert5-name': 'Aceleração Digital na Saúde',
-                
+
                 // Skills
                 'skills-title': 'Competências',
                 'skill-cat1': 'Liderança & Estratégia',
@@ -1050,7 +541,7 @@
                 'skill4-2': 'Aprendizagem ágil',
                 'skill4-3': 'Responsabilidade',
                 'skill4-4': 'Metodologias ágeis',
-                
+
                 // Contact
                 'contact-title': 'Entre em Contato',
                 'contact-intro': 'Estou sempre aberto a discutir novos projetos, oportunidades de consultoria ou parcerias estratégicas em transformação digital e analytics.',
@@ -1059,6 +550,8 @@
                 'footer-text': 'Todos os direitos reservados.'
             },
             en: {
+                'nav-articles': 'Articles',
+                'phone-title': 'WhatsApp',
                 // Navigation
                 'nav-home': 'Home',
                 'nav-about': 'About',
@@ -1066,12 +559,12 @@
                 'nav-certifications': 'Certifications',
                 'nav-skills': 'Skills',
                 'nav-contact': 'Contact',
-                
+
                 // Hero
                 'hero-subtitle': 'Data, Analytics & Tech Innovation Leader',
                 'hero-description': 'Digital transformation specialist in healthcare with proven experience in data governance, corporate BI, Microsoft Fabric and DataOps. Combining strategic vision and technical excellence to drive executive decisions.',
                 'cta-contact': 'Get in Touch',
-                
+
                 // About
                 'about-title': 'Professional Profile',
                 'specialties-title': '🎯 Specialties',
@@ -1092,7 +585,7 @@
                 'lang3': 'English - Intermediate B1',
                 'lang4': 'Available for international travel',
                 'lang5': 'Available for relocation',
-                
+
                 // Experience
                 'experience-title': 'Professional Experience',
                 'job1-title': 'Digital Transformation Manager',
@@ -1103,7 +596,7 @@
                 'job1-ach2': 'Implementation of Microsoft Fabric to scale millions of records with Data Governance (16 active procedures)',
                 'job1-ach3': 'Launch of Data Culture Week and Data Champions program',
                 'job1-ach4': 'Definition of Data and AI Roadmap 2026-2028',
-                
+
                 'job2-title': 'Innovation, Integration & Data Coordinator',
                 'job2-date': 'Jul 2020 - Oct 2024',
                 'job2-desc': 'High-complexity private hospital, reference in innovation and quality in Bolivia',
@@ -1112,7 +605,7 @@
                 'job2-ach2': 'Coordinated BI solutions integrating hospital and administrative systems',
                 'job2-ach3': 'Promoted data curation and knowledge management with self-service BI',
                 'job2-ach4': 'Strategic alignment between business, IT and suppliers',
-                
+
                 'job3-title': 'IT Coordinator',
                 'job3-date': 'Jul 2018 - Mar 2020',
                 'job3-desc': 'Integrated ophthalmological healthcare network dedicated to medical excellence and technological innovation',
@@ -1121,7 +614,7 @@
                 'job3-ach2': 'Implemented RPA solution in shared services center',
                 'job3-ach3': 'Consolidation of Philips Tasy across multiple network units',
                 'job3-ach4': 'Infrastructure management across 25 hospitals',
-                
+
                 'job4-title': 'Innovation & Technology Manager',
                 'job4-date': 'Aug 2014 - Mar 2017',
                 'job4-desc': 'Best healthcare provider in Santa Catarina (IDSS 2014), 24x State Top of Mind award winner',
@@ -1130,19 +623,19 @@
                 'job4-ach2': 'Structured the IT Project Office (S-PMO) with governance and change management',
                 'job4-ach3': 'Implemented HIMSS EMRAM digital maturity model',
                 'job4-ach4': 'Executive liaison with business, suppliers and leadership',
-                
+
                 'job5-title': 'IT Manager',
                 'job5-date': 'Mar 2012 - Aug 2014',
                 'job5-desc': 'Reference healthcare center integrated with Rede D\'Or São Luiz, Brazil\'s largest private hospital network',
                 'ach-title5': 'Key Achievements:',
                 'job5-ach1': 'Managed implementation and integration of hospital systems (Tasy, radiology, laboratory)',
                 'job5-ach2': 'Developed business continuity and disaster recovery plans',
-                
+
                 // Certifications
                 'cert-title': 'Certifications',
                 'cert4-name': 'Lead Data Officer Specialist',
                 'cert5-name': 'Digital Acceleration in Healthcare',
-                
+
                 // Skills
                 'skills-title': 'Core Competencies',
                 'skill-cat1': 'Leadership & Strategy',
@@ -1162,7 +655,7 @@
                 'skill4-2': 'Agile learning',
                 'skill4-3': 'Accountability',
                 'skill4-4': 'Agile methodologies',
-                
+
                 // Contact
                 'contact-title': 'Get in Touch',
                 'contact-intro': 'I\'m always open to discussing new projects, consulting opportunities or strategic partnerships in digital transformation and analytics.',
@@ -1171,6 +664,8 @@
                 'footer-text': 'All rights reserved.'
             },
             es: {
+                'nav-articles': 'Artículos',
+                'phone-title': 'WhatsApp',
                 // Navigation
                 'nav-home': 'Inicio',
                 'nav-about': 'Acerca',
@@ -1178,12 +673,12 @@
                 'nav-certifications': 'Certificaciones',
                 'nav-skills': 'Competencias',
                 'nav-contact': 'Contacto',
-                
+
                 // Hero
                 'hero-subtitle': 'Líder en Datos, Análisis e Innovación Tecnológica',
                 'hero-description': 'Especialista en transformación digital en el sector salud con experiencia comprobada en gobernanza de datos, BI corporativo, Microsoft Fabric y DataOps. Combinando visión estratégica y excelencia técnica para impulsar decisiones ejecutivas.',
                 'cta-contact': 'Contacto',
-                
+
                 // About
                 'about-title': 'Perfil Profesional',
                 'specialties-title': '🎯 Especialidades',
@@ -1204,7 +699,7 @@
                 'lang3': 'Inglés - Intermedio B1',
                 'lang4': 'Disponible para viajes internacionales',
                 'lang5': 'Disponible para expatriación',
-                
+
                 // Experience
                 'experience-title': 'Experiencia Profesional',
                 'job1-title': 'Gerente de Transformación Digital',
@@ -1215,7 +710,7 @@
                 'job1-ach2': 'Implementación de Microsoft Fabric para escalar millones de registros con Gobernanza de Datos (16 procedimientos activos)',
                 'job1-ach3': 'Lanzamiento de la Semana de Cultura de Datos y programa Data Champions',
                 'job1-ach4': 'Definición de la Hoja de Ruta de Datos e IA 2026-2028',
-                
+
                 'job2-title': 'Coordinador de Innovación, Integraciones y Datos',
                 'job2-date': 'Jul 2020 - Oct 2024',
                 'job2-desc': 'Hospital privado de alta complejidad, referencia en innovación y calidad en Bolivia',
@@ -1224,7 +719,7 @@
                 'job2-ach2': 'Coordiné soluciones de BI integrando sistemas hospitalarios y administrativos',
                 'job2-ach3': 'Promovı́ la curaduría de datos y gestión del conocimiento con BI de autoservicio',
                 'job2-ach4': 'Alineamiento estratégico entre negocios, TI y proveedores',
-                
+
                 'job3-title': 'Coordinador de TI',
                 'job3-date': 'Jul 2018 - Mar 2020',
                 'job3-desc': 'Red integrada de salud oftalmológica dedicada a la excelencia médica e innovación tecnológica',
@@ -1233,7 +728,7 @@
                 'job3-ach2': 'Implementé solución RPA en el centro de servicios compartidos',
                 'job3-ach3': 'Consolidación de Philips Tasy en diversas unidades de la red',
                 'job3-ach4': 'Gestión de infraestructura en 25 hospitales',
-                
+
                 'job4-title': 'Gerente de Innovación y Tecnología',
                 'job4-date': 'Ago 2014 - Mar 2017',
                 'job4-desc': 'Mejor operadora de salud de Santa Catarina (IDSS 2014), 24x ganadora del premio Top of Mind Estatal',
@@ -1242,19 +737,19 @@
                 'job4-ach2': 'Estructuré la Oficina de Proyectos de TI (S-PMO) con gobernanza y gestión de cambios',
                 'job4-ach3': 'Implementé modelo de madurez digital HIMSS EMRAM',
                 'job4-ach4': 'Articulación ejecutiva con negocios, proveedores y liderazgo',
-                
+
                 'job5-title': 'Gerente de TI',
                 'job5-date': 'Mar 2012 - Ago 2014',
                 'job5-desc': 'Centro de referencia en salud integrado a Rede D\'Or São Luiz, la mayor red hospitalaria privada de Brasil',
                 'ach-title5': 'Principales Logros:',
                 'job5-ach1': 'Gestioné la implementación e integración de sistemas hospitalarios (Tasy, radiología, laboratorio)',
                 'job5-ach2': 'Elaboré planes de continuidad de negocios y recuperación de desastres',
-                
+
                 // Certifications
                 'cert-title': 'Certificaciones',
                 'cert4-name': 'Especialista en Lead Data Officer',
                 'cert5-name': 'Aceleración Digital en Salud',
-                
+
                 // Skills
                 'skills-title': 'Competencias',
                 'skill-cat1': 'Liderazgo y Estrategia',
@@ -1274,7 +769,7 @@
                 'skill4-2': 'Aprendizaje ágil',
                 'skill4-3': 'Responsabilidad',
                 'skill4-4': 'Metodologías ágiles',
-                
+
                 // Contact
                 'contact-title': 'Contacto',
                 'contact-intro': 'Siempre estoy abierto a discutir nuevos proyectos, oportunidades de consultoría o asociaciones estratégicas en transformación digital y analítica.',
@@ -1330,5 +825,26 @@
             }
         });
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://seu-usuario.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://seu-usuario.github.io/blog"
+    }
+  ]
+}
+</script>
 </body>
+
 </html>
